@@ -1,0 +1,204 @@
+{
+  "duration_seconds": 90.78,
+  "workers": 6,
+  "requests": [
+    {
+      "ok": 3366,
+      "failed": 0
+    },
+    {
+      "ok": 3467,
+      "failed": 0
+    },
+    {
+      "ok": 3494,
+      "failed": 0
+    },
+    {
+      "ok": 3501,
+      "failed": 0
+    },
+    {
+      "ok": 3481,
+      "failed": 0
+    },
+    {
+      "ok": 3521,
+      "failed": 0
+    }
+  ],
+  "samples": [
+    {
+      "time": "2026-11-20T12:23:17.406749+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 3,
+              "averageValue": "3m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:23:27.485640+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 3,
+              "averageValue": "3m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:23:37.577870+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 48,
+              "averageValue": "48m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:23:47.658857+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 48,
+              "averageValue": "48m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:23:57.741073+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 48,
+              "averageValue": "48m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:24:07.823623+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 48,
+              "averageValue": "48m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:24:17.915796+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 48,
+              "averageValue": "48m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:24:28.004089+00:00",
+      "desired": 2,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 48,
+              "averageValue": "48m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 2,
+      "ready": 2
+    },
+    {
+      "time": "2026-11-20T12:24:38.089409+00:00",
+      "desired": 4,
+      "current": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 633,
+              "averageValue": "633m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "deployment_replicas": 4,
+      "ready": 2
+    }
+  ],
+  "max_desired": 4
+}

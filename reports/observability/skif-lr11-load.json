@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "student_id": "ESKoVV-skif-lr11",
+  "base_url": "http://127.0.0.1:18880",
+  "request_count": 200,
+  "invalid_every": 10,
+  "statuses": {
+    "200": 180,
+    "422": 20
+  },
+  "latency_seconds": {
+    "mean": 0.0055592018461902626,
+    "p50": 0.005882558994926512,
+    "p95": 0.006417467026039958,
+    "max": 0.01921735401265323
+  }
+}

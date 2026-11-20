@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-11-20T12:31:09.142457+00:00",
+  "window": "5m",
+  "queries": {
+    "request_rate": {
+      "query": "sum(rate(http_requests_total[5m]))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1795177869.126,
+                "0.9796610169491525"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "error_ratio": {
+      "query": "sum(rate(http_requests_total{status=~\"5..\"}[5m])) / clamp_min(sum(rate(http_requests_total[5m])),0.001)",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": []
+        }
+      }
+    },
+    "invalid_rate": {
+      "query": "sum(rate(http_requests_total{status=\"422\"}[5m]))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1795177869.13,
+                "0.06779661016949153"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "latency_p95": {
+      "query": "histogram_quantile(0.95,sum by(le)(rate(http_request_duration_seconds_bucket[5m])))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1795177869.132,
+                "0.009532986111111112"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "mean_probability": {
+      "query": "sum(rate(prediction_probability_sum[5m])) / clamp_min(sum(rate(prediction_probability_count[5m])),0.000001)",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1795177869.136,
+                "0.23057418459519122"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "model": {
+      "query": "model_info",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "__name__": "model_info",
+                "instance": "app:8080",
+                "job": "flight-delay-api",
+                "model_name": "team-3-flight-delay-classifier",
+                "model_version": "1",
+                "source_commit": "4683724c6c470f6f81ae47527144e69a5ab6ab94"
+              },
+              "value": [
+                1795177869.138,
+                "1"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "up": {
+      "query": "up{job=\"flight-delay-api\"}",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "__name__": "up",
+                "instance": "app:8080",
+                "job": "flight-delay-api"
+              },
+              "value": [
+                1795177869.141,
+                "1"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

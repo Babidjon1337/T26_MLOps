@@ -1,0 +1,7 @@
+{
+  "model_name": "team-3-flight-delay-classifier",
+  "champion_version": "1",
+  "run_id": "674de9fa758d460b8df38d066c4ab1b2",
+  "source_commit": "5a25637d740bb4ad65c4d9d3ec6dc4ddb116fb02",
+  "drift_job_changed_champion": false
+}

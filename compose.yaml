@@ -57,6 +57,9 @@ services:
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?Set GRAFANA_ADMIN_PASSWORD in .env}
       GF_USERS_ALLOW_SIGN_UP: "false"
+      # Bundled signed plugins are pinned with the image; updates cannot replace
+      # files under the read-only image filesystem.
+      GF_PLUGINS_PREINSTALL_AUTO_UPDATE: "false"
     volumes:
       - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
       - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
@@ -64,7 +67,9 @@ services:
       - prometheus
     read_only: true
     tmpfs:
-      - /var/lib/grafana:size=64m,uid=472,gid=0,mode=0770
+      # Grafana 13 installs its signed data-source plugins at startup.
+      - /var/lib/grafana:size=512m,uid=472,gid=0,mode=0770
       - /var/log/grafana:size=16m,uid=472,gid=0,mode=0770
+      - /tmp:size=256m,mode=1777
     security_opt:
       - no-new-privileges:true

@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-20T12:31:09.163810+00:00",
+  "health": {
+    "database": "ok",
+    "version": "13.2.6",
+    "commit": "c9c5a9ecc233aea7be9d25261012da7c9ddc8797"
+  },
+  "dashboard_uid": "flight-delay-service",
+  "title": "Flight Delay Service",
+  "panels": [
+    "Request rate",
+    "5xx ratio",
+    "Latency p95 by route",
+    "Prediction outcomes",
+    "API up",
+    "Resolved model",
+    "Mean delay probability"
+  ],
+  "datasource_query": {
+    "results": {
+      "A": {
+        "status": 200,
+        "frames": [
+          {
+            "schema": {
+              "refId": "A",
+              "meta": {
+                "type": "numeric-multi",
+                "typeVersion": [
+                  0,
+                  1
+                ],
+                "custom": {
+                  "calculatedMinStep": 2000,
+                  "resultType": "vector"
+                },
+                "executedQueryString": "Expr: up{job=\"flight-delay-api\"}\nStep: 2s"
+              },
+              "fields": [
+                {
+                  "name": "Time",
+                  "type": "time",
+                  "typeInfo": {
+                    "frame": "time.Time"
+                  },
+                  "config": {
+                    "interval": 2000
+                  }
+                },
+                {
+                  "name": "up",
+                  "type": "number",
+                  "typeInfo": {
+                    "frame": "float64"
+                  },
+                  "labels": {
+                    "__name__": "up",
+                    "instance": "app:8080",
+                    "job": "flight-delay-api"
+                  },
+                  "config": {
+                    "displayNameFromDS": "up{instance=\"app:8080\", job=\"flight-delay-api\"}"
+                  }
+                }
+              ]
+            },
+            "data": {
+              "values": [
+                [
+                  1795177869161
+                ],
+                [
+                  1
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

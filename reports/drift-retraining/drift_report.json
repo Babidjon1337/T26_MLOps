@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-11-20T12:21:48.143805+00:00",
+  "drift": {
+    "status": "alert",
+    "reference_rows": 12,
+    "current_rows": 12,
+    "features": {
+      "DepHour": {
+        "method": "psi_reference_bins",
+        "score": 13.121572,
+        "status": "alert"
+      },
+      "IsWeekend": {
+        "method": "psi_categories",
+        "score": 1.803107,
+        "status": "alert"
+      }
+    }
+  },
+  "automatic_promotion": false,
+  "action": "candidate_reused",
+  "candidate_id": "db394474839df61c8f1fff166896249262cfc713e91d94b2c964bd045963445d",
+  "candidate_model": "models/drift-candidates/db394474839df61c8f1fff166896249262cfc713e91d94b2c964bd045963445d/model.joblib",
+  "candidate_manifest": "models/drift-candidates/db394474839df61c8f1fff166896249262cfc713e91d94b2c964bd045963445d/candidate.json",
+  "model_sha256": "860c328a8eec463d046211ae7f72de3a3edb9c2b9d9212c5e547d71eb3341ab6"
+}
