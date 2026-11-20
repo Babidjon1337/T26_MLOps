@@ -6,8 +6,8 @@ DVC 3.67.1, Python 3.12.16.
 
 | Версия | Git commit | DVC md5 | SHA-256 CSV | Период | Строк | Контракт | Результат |
 |---|---|---|---|---|---:|---|---|
-| v1 | `656236c358f4dcbf47542296058eb5df858a408b` | `89511bf17a122596d2b7a21f6a2925ac` | `0f73c37dae1a684f703d24d84b850dfd1486aef72b0ca43fe8cd7088877af1c1` | 2026-01-01 — 2026-01-31 | 23 321 | 1.0.0 | passed |
-| v2 | `4e0d208dd1e65a2d0b669ea12b9a1dd98d82fa9f` | `bb0fdbb60462dd3c4f22aea8b0aa901f` | `78721daf85b396674e95464ca6aae151dedc7db86c480d5aef881ab4187fcace` | 2026-01-01 — 2026-02-28 | 45 954 | 1.0.0 | passed |
+| v1 | `de071472edd0ba26f3ae6b3a18ed6bea73c14d72` | `89511bf17a122596d2b7a21f6a2925ac` | `0f73c37dae1a684f703d24d84b850dfd1486aef72b0ca43fe8cd7088877af1c1` | 2026-01-01 — 2026-01-31 | 23 321 | 1.0.0 | passed |
+| v2 | `d8e0c7aa38699dd9dc72c10b618b4ef2e709567a` | `bb0fdbb60462dd3c4f22aea8b0aa901f` | `78721daf85b396674e95464ca6aae151dedc7db86c480d5aef881ab4187fcace` | 2026-01-01 — 2026-02-28 | 45 954 | 1.0.0 | passed |
 
 Отчёты валидации: `docs/reproducibility/lr3-v1-validation.json`, `lr3-v2-validation.json`.
 Три идентификатора не заменяют друг друга: Git commit фиксирует проект, DVC md5 — объект в cache и
@@ -28,7 +28,7 @@ remote, SHA-256 из отчёта связывает конкретные бай
 
 ```bash
 git clone https://github.com/ESKoVV/T26_MLOps.git && cd T26_MLOps
-git switch --detach 656236c358f4dcbf47542296058eb5df858a408b   # или v2
+git switch --detach de071472edd0ba26f3ae6b3a18ed6bea73c14d72   # или v2
 dvc pull
 sha256sum data/bts/atl_2026.csv
 python -m mlops_flight_delay.validate_data --data data/bts/atl_2026.csv \
@@ -53,3 +53,11 @@ python scripts/build_bts_fragment.py data/bts/atl_2026.csv On_Time_Reporting_Car
    (тест `test_dvc_pointer_mismatch_is_detected`). Восстановление: `dvc checkout --force data/bts/atl_2026.csv`.
 2. Восстановленная копия с нарушенным порядком дат (первая и последняя строки переставлены):
    валидатор завершается с кодом 1, падает `FlightDate.chronological_order`.
+
+## Обновление Git-идентификаторов 2026-11-20
+
+После очистки метаданных соавторства изменились SHA коммитов. В таблице и
+командах выше указаны новые SHA. Деревья файлов v1/v2, DVC md5 и SHA-256 данных
+побайтово сохранены; результаты исходного восстановления относятся к тем же
+данным и коду. [Соответствие старых и новых SHA](git-history-map.csv).
+Исторические CI runs и отчёты сохраняют SHA фактически проверенного запуска.
