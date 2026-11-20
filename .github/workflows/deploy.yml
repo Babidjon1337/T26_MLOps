@@ -1,0 +1,93 @@
+name: Cluster delivery
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: team3-cluster-delivery
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    env:
+      SOURCE_COMMIT: ${{ github.event.workflow_run.head_sha }}
+      KUBE_CONTEXT: team3-delivery
+      KUBE_NAMESPACE: mlops-team3
+    steps:
+      - name: Checkout the exact source that passed CI
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+
+      - name: Build and push immutable image to GHCR
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          image="ghcr.io/${GITHUB_REPOSITORY,,}:$SOURCE_COMMIT"
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker build --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" --label "org.opencontainers.image.revision=$SOURCE_COMMIT" -t "$image" .
+          docker push "$image"
+          printf 'DELIVERY_IMAGE=%s\n' "$image" >> "$GITHUB_ENV"
+          mkdir -p reports/delivery
+          docker image inspect "$image" --format '{{json .RepoDigests}}' > reports/delivery/registry-digests.json
+
+      - name: Install verified Minikube and kubectl
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 https://storage.googleapis.com/minikube/releases/v1.39.0/minikube-linux-amd64 -o /tmp/minikube
+          curl -fsSL --retry 3 https://storage.googleapis.com/minikube/releases/v1.39.0/minikube-linux-amd64.sha256 -o /tmp/minikube.sha256
+          printf '%s  /tmp/minikube\n' "$(cat /tmp/minikube.sha256)" | sha256sum --check
+          sudo install /tmp/minikube /usr/local/bin/minikube
+          curl -fsSL --retry 3 https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl -o /tmp/kubectl
+          curl -fsSL --retry 3 https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl.sha256 -o /tmp/kubectl.sha256
+          printf '%s  /tmp/kubectl\n' "$(cat /tmp/kubectl.sha256)" | sha256sum --check
+          sudo install /tmp/kubectl /usr/local/bin/kubectl
+
+      - name: Create isolated cluster and load image from registry
+        run: |
+          minikube start -p team3-delivery --driver=docker --cpus=2 --memory=3072 --kubernetes-version=v1.37.0
+          docker image rm "$DELIVERY_IMAGE"
+          docker pull "$DELIVERY_IMAGE"
+          minikube -p team3-delivery image load "$DELIVERY_IMAGE"
+          minikube -p team3-delivery addons enable metrics-server
+
+      - name: Deploy and verify service
+        run: |
+          bash scripts/deploy_k8s.sh "$DELIVERY_IMAGE" "$SOURCE_COMMIT"
+          kubectl -n mlops-team3 get deploy,pods,svc,hpa -o json > reports/delivery/resources.json
+          kubectl -n mlops-team3 port-forward svc/flight-delay-api 18080:80 > /tmp/port-forward.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            curl --fail --silent http://127.0.0.1:18080/readyz && break
+            sleep 2
+          done
+          python scripts/k8s_smoke.py --base-url http://127.0.0.1:18080 --source-commit "$SOURCE_COMMIT" --output reports/delivery/smoke.json
+
+      - name: Save delivery evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: team3-delivery-${{ github.event.workflow_run.head_sha }}
+          path: reports/delivery/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Remove disposable cluster
+        if: always()
+        run: minikube delete -p team3-delivery || true

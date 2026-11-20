@@ -9,6 +9,7 @@ mlflow.db
 *.pyc
 .env
 models/*.joblib
+models/drift-candidates/
 
 *.egg-info/
 reports/validation/
