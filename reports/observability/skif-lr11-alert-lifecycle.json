@@ -1,0 +1,740 @@
+[
+  {
+    "event": "baseline",
+    "time": "2026-11-20T12:31:09.182317+00:00",
+    "alerts": [],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177869.182,
+          "1"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "app_stopped",
+    "time": "2026-11-20T12:31:09.571637+00:00",
+    "alerts": [],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177869.572,
+          "1"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:09.575538+00:00",
+    "alerts": [],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177869.576,
+          "1"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:14.584707+00:00",
+    "alerts": [],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177874.589,
+          "1"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:19.601688+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177879.603,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:24.615333+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177884.618,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:29.637810+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177889.643,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:34.654531+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177894.657,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:39.665206+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177899.667,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:44.677412+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177904.681,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:49.696937+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177909.699,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:54.711159+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177914.715,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:31:59.732386+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177919.735,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:32:04.745262+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177924.748,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:32:09.752056+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177929.752,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:32:14.760517+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "pending",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177934.765,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_down",
+    "time": "2026-11-20T12:32:19.787028+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177939.79,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "app_restarted",
+    "time": "2026-11-20T12:32:19.972630+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177939.973,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_recovery",
+    "time": "2026-11-20T12:32:19.977595+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177939.978,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_recovery",
+    "time": "2026-11-20T12:32:22.986251+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177942.988,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_recovery",
+    "time": "2026-11-20T12:32:25.992940+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177945.993,
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_recovery",
+    "time": "2026-11-20T12:32:29.003146+00:00",
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "FlightDelayServiceDown",
+          "instance": "app:8080",
+          "job": "flight-delay-api",
+          "severity": "critical",
+          "team": "mlops-course"
+        },
+        "annotations": {
+          "runbook": "docs/runbooks/flight-delay-api.md",
+          "summary": "Flight delay API is unavailable"
+        },
+        "state": "firing",
+        "activeAt": "2026-11-20T12:31:19.455686552Z",
+        "value": "0e+00"
+      }
+    ],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177949.007,
+          "1"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "poll_recovery",
+    "time": "2026-11-20T12:32:32.022478+00:00",
+    "alerts": [],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177952.025,
+          "1"
+        ]
+      }
+    ]
+  },
+  {
+    "event": "resolved",
+    "time": "2026-11-20T12:32:32.037754+00:00",
+    "alerts": [],
+    "up": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "value": [
+          1795177952.04,
+          "1"
+        ]
+      }
+    ]
+  }
+]

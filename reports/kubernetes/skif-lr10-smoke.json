@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-20T12:21:46.939903+00:00",
+  "source_commit": "4683724c6c470f6f81ae47527144e69a5ab6ab94",
+  "prediction": {
+    "delay_probability": 0.7989583333333331,
+    "delayed": true,
+    "threshold": 0.5,
+    "model_version": "0.2.0",
+    "request_id": "team3-k8s-smoke"
+  }
+}

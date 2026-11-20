@@ -19,12 +19,12 @@
 | 3 | DVC | #6 | фрагмент BTS ATL v1/v2, протокол восстановления | [Доли](docs/evidence/lr3-evidence-card.md#распределение-командного-вклада) |
 | 4 | MLflow Tracking | #8 | 2 run, исправлен `data.dvc_hash` | [Доли](docs/evidence/lr4-evidence-card.md#распределение-командного-вклада) |
 | 5 | Тесты | #10 | defect injection, повреждённая модель | [Доли](docs/evidence/lr5-evidence-card.md#распределение-командного-вклада) |
-| 6 | Контейнер | — | ждёт Docker на машине тимлида; образ собирает CI | [Доли](docs/evidence/lr6-evidence-card.md#распределение-командного-вклада) |
+| 6 | Контейнер | — | Docker восстановлен; image собран для СКИФ ЛР10–13; отдельная сдача GitHub ЛР6 остаётся | [Доли](docs/evidence/lr6-evidence-card.md#распределение-командного-вклада) |
 | 7 | Контракт API | #12 | строгий request ID, 500 `ErrorResponse` | [Доли](docs/evidence/lr7-evidence-card.md#распределение-командного-вклада) |
 | 8 | CI | #14 | controlled failure, actions по SHA, защита веток | [Доли](docs/evidence/lr8-evidence-card.md#распределение-командного-вклада) |
 | 9 | Prefect | #16 | retry только для `OSError` | [Доли](docs/evidence/lr9-evidence-card.md#распределение-командного-вклада) |
 | 10 | Registry | #18 | pyfunc `predict_proba`, запрет самоодобрения, rollback | [Доли](docs/evidence/lr10-evidence-card.md#распределение-командного-вклада) |
-| 11 | Наблюдаемость | — | ждёт Docker (Prometheus/Grafana) | [Доли](docs/evidence/lr11-evidence-card.md#распределение-командного-вклада) |
+| 11 | Наблюдаемость | #41 | [Prometheus/Grafana, probability, alert lifecycle](docs/skif/lr11-observability.md) | [Доли](docs/evidence/lr11-evidence-card.md#распределение-командного-вклада) |
 | 12 | Drift | #20 | окна BTS, coverage, решения | [Доли](docs/evidence/lr12-evidence-card.md#распределение-командного-вклада) |
 | 13 | Point-in-time | #22 | утечка same-day завышает AUC 0.58 → 0.68 | [Доли](docs/evidence/lr13-evidence-card.md#распределение-командного-вклада) |
 | 14 | Governance | #24 | model card 2.0.0, порог по validation, F1 gap | [Доли](docs/evidence/lr14-evidence-card.md#распределение-командного-вклада) |
@@ -32,6 +32,21 @@
 | 16 | Release | #28 | manifest, проверка claims; draft до независимого approval | [Доли](docs/evidence/lr16-evidence-card.md#распределение-командного-вклада) |
 
 Отчёты по каждой ЛР — в `docs/` (ссылки в PR), evidence cards — `docs/evidence/lrN-evidence-card-<login>.md`.
+
+## СКИФ ЛР10–13 — фактические запуски
+
+Нумерация СКИФ отличается от GitHub-методички. Новые результаты:
+
+| СКИФ | Отчёт | Проверка |
+|---|---|---|
+| 10 | [Kubernetes/Minikube](docs/skif/lr10-kubernetes.md) | NodePort, scale3, HPA→4, pod recovery |
+| 11 | [Prometheus/Grafana](docs/skif/lr11-observability.md) | 7 панелей, probability, pending→firing→resolved |
+| 12 | [Drift → обучение кандидата](docs/skif/lr12-drift-retraining.md) | PSI, automatic train/register, idempotence |
+| 13 | [CI/CD → кластер](docs/skif/lr13-cicd.md) | CI → GHCR → Minikube → HTTP smoke |
+
+Реализация: PR #41, issue #42. [Доли вклада](docs/team-contributions.md).
+Для этих заданий используются теги `skif-lr10-v1`…`skif-lr13-v1`;
+GitHub `lr10-v1` продолжает обозначать прежнюю лабораторную MLflow Registry.
 
 ## Быстрый старт
 

@@ -1,0 +1,7 @@
+{
+  "model_name": "team-3-flight-delay-classifier",
+  "model_version": "1",
+  "source_commit": "4683724c6c470f6f81ae47527144e69a5ab6ab94",
+  "bundle_sha256": "c92faee30488974a4300f5940901e67c9c1bac64d2f4c4ed15cc53db78bf79a7",
+  "model_info_matches": true
+}

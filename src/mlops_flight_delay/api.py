@@ -37,6 +37,12 @@ PREDICTIONS = Counter(
     "Prediction outcomes produced by the model",
     ["outcome", "model_version"],
 )
+PREDICTION_PROBABILITY = Histogram(
+    "prediction_probability",
+    "Distribution of successful delay probabilities",
+    ["model_version"],
+    buckets=(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0),
+)
 MODEL_INFO = Gauge(
     "model_info",
     "Resolved model identity",
@@ -291,6 +297,7 @@ def create_app(model_path: Path | None = None) -> FastAPI:
             probability = float(bundle["model"].predict_proba(frame[bundle["features"]])[:, 1][0])
             threshold = 0.5
             model_version = api.state.model_metadata["model_version"]
+            PREDICTION_PROBABILITY.labels(model_version=model_version).observe(probability)
             PREDICTIONS.labels(
                 outcome="delayed" if probability >= threshold else "on_time",
                 model_version=model_version,

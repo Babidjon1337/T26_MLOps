@@ -1,0 +1,42 @@
+name: Drift candidate training
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: team3-drift-candidate-training
+  cancel-in-progress: false
+
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout monitoring and labelled training snapshots
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install pinned training and registry dependencies
+        run: python -m pip install -c requirements.lock -e ".[tracking]"
+      - name: Detect drift, train and register candidate
+        run: bash scripts/run_drift_cycle.sh
+      - name: Save drift, training and registry evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: team3-drift-retraining-${{ github.run_id }}
+          path: |
+            reports/drift-retraining/
+            models/drift-candidates/
+          retention-days: 30
+          if-no-files-found: error
