@@ -4,16 +4,31 @@
 
 ## Быстрый старт
 
+Создайте виртуальное окружение:
+
 ```bash
 python -m venv .venv
+```
+
+Активируйте его одной командой для своей оболочки:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+```bash
+source .venv/bin/activate
+```
+
+После активации установите зависимости и запустите проект:
+
+```bash
 python -m pip install -e ".[dev]"
 python -m ruff check .
 python -m pytest -q
 python -m mlops_flight_delay.train --data data/flights_sample.csv --model models/model.joblib
 uvicorn mlops_flight_delay.api:app --host 0.0.0.0 --port 8080
 ```
-
-Перед установкой активируйте окружение: `.venv\Scripts\Activate.ps1` в Windows PowerShell или `source .venv/bin/activate` в Linux и macOS.
 
 Проверка:
 
