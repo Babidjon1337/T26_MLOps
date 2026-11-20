@@ -12,24 +12,24 @@
 
 ## Лабораторные работы team-3
 
-| ЛР | Тема | PR | Главное  Вклад |
+| ЛР | Тема | PR | Главное | Вклад |
 |---|---|---|---|---|
-| 1 | Репозиторий и среда | #2 | 5 дефектов CI стартового проекта, `requirements.lock`, ADR 0001  [Доли](docs/evidence/lr1-evidence-card.md#распределение-командного-вклада) |
-| 2 | Контракт данных | #4 | разбиение по календарным дням, контракт BTS  [Доли](docs/evidence/lr2-evidence-card.md#распределение-командного-вклада) |
-| 3 | DVC | #6 | фрагмент BTS ATL v1/v2, протокол восстановления  [Доли](docs/evidence/lr3-evidence-card.md#распределение-командного-вклада) |
-| 4 | MLflow Tracking | #8 | 2 run, исправлен `data.dvc_hash`  [Доли](docs/evidence/lr4-evidence-card.md#распределение-командного-вклада) |
-| 5 | Тесты | #10 | defect injection, повреждённая модель  [Доли](docs/evidence/lr5-evidence-card.md#распределение-командного-вклада) |
-| 6 | Контейнер | — | ждёт Docker на машине тимлида; образ собирает CI  [Доли](docs/evidence/lr6-evidence-card.md#распределение-командного-вклада) |
-| 7 | Контракт API | #12 | строгий request ID, 500 `ErrorResponse`  [Доли](docs/evidence/lr7-evidence-card.md#распределение-командного-вклада) |
-| 8 | CI | #14 | controlled failure, actions по SHA, защита веток  [Доли](docs/evidence/lr8-evidence-card.md#распределение-командного-вклада) |
-| 9 | Prefect | #16 | retry только для `OSError`  [Доли](docs/evidence/lr9-evidence-card.md#распределение-командного-вклада) |
-| 10 | Registry | #18 | pyfunc `predict_proba`, запрет самоодобрения, rollback  [Доли](docs/evidence/lr10-evidence-card.md#распределение-командного-вклада) |
-| 11 | Наблюдаемость | — | ждёт Docker (Prometheus/Grafana)  [Доли](docs/evidence/lr11-evidence-card.md#распределение-командного-вклада) |
-| 12 | Drift | #20 | окна BTS, coverage, решения  [Доли](docs/evidence/lr12-evidence-card.md#распределение-командного-вклада) |
-| 13 | Point-in-time | #22 | утечка same-day завышает AUC 0.58 → 0.68  [Доли](docs/evidence/lr13-evidence-card.md#распределение-командного-вклада) |
-| 14 | Governance | #24 | model card 2.0.0, порог по validation, F1 gap  [Доли](docs/evidence/lr14-evidence-card.md#распределение-командного-вклада) |
-| 15 | Capacity | #26 | bottleneck — CPU одного процесса  [Доли](docs/evidence/lr15-evidence-card.md#распределение-командного-вклада) |
-| 16 | Release | #28 | manifest, проверка claims; draft до независимого approval  [Доли](docs/evidence/lr16-evidence-card.md#распределение-командного-вклада) |
+| 1 | Репозиторий и среда | #2 | 5 дефектов CI стартового проекта, `requirements.lock`, ADR 0001 | [Доли](docs/evidence/lr1-evidence-card.md#распределение-командного-вклада) |
+| 2 | Контракт данных | #4 | разбиение по календарным дням, контракт BTS | [Доли](docs/evidence/lr2-evidence-card.md#распределение-командного-вклада) |
+| 3 | DVC | #6 | фрагмент BTS ATL v1/v2, протокол восстановления | [Доли](docs/evidence/lr3-evidence-card.md#распределение-командного-вклада) |
+| 4 | MLflow Tracking | #8 | 2 run, исправлен `data.dvc_hash` | [Доли](docs/evidence/lr4-evidence-card.md#распределение-командного-вклада) |
+| 5 | Тесты | #10 | defect injection, повреждённая модель | [Доли](docs/evidence/lr5-evidence-card.md#распределение-командного-вклада) |
+| 6 | Контейнер | — | ждёт Docker на машине тимлида; образ собирает CI | [Доли](docs/evidence/lr6-evidence-card.md#распределение-командного-вклада) |
+| 7 | Контракт API | #12 | строгий request ID, 500 `ErrorResponse` | [Доли](docs/evidence/lr7-evidence-card.md#распределение-командного-вклада) |
+| 8 | CI | #14 | controlled failure, actions по SHA, защита веток | [Доли](docs/evidence/lr8-evidence-card.md#распределение-командного-вклада) |
+| 9 | Prefect | #16 | retry только для `OSError` | [Доли](docs/evidence/lr9-evidence-card.md#распределение-командного-вклада) |
+| 10 | Registry | #18 | pyfunc `predict_proba`, запрет самоодобрения, rollback | [Доли](docs/evidence/lr10-evidence-card.md#распределение-командного-вклада) |
+| 11 | Наблюдаемость | — | ждёт Docker (Prometheus/Grafana) | [Доли](docs/evidence/lr11-evidence-card.md#распределение-командного-вклада) |
+| 12 | Drift | #20 | окна BTS, coverage, решения | [Доли](docs/evidence/lr12-evidence-card.md#распределение-командного-вклада) |
+| 13 | Point-in-time | #22 | утечка same-day завышает AUC 0.58 → 0.68 | [Доли](docs/evidence/lr13-evidence-card.md#распределение-командного-вклада) |
+| 14 | Governance | #24 | model card 2.0.0, порог по validation, F1 gap | [Доли](docs/evidence/lr14-evidence-card.md#распределение-командного-вклада) |
+| 15 | Capacity | #26 | bottleneck — CPU одного процесса | [Доли](docs/evidence/lr15-evidence-card.md#распределение-командного-вклада) |
+| 16 | Release | #28 | manifest, проверка claims; draft до независимого approval | [Доли](docs/evidence/lr16-evidence-card.md#распределение-командного-вклада) |
 
 Отчёты по каждой ЛР — в `docs/` (ссылки в PR), evidence cards — `docs/evidence/lrN-evidence-card-<login>.md`.
 
