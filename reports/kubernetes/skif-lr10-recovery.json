@@ -1,0 +1,12 @@
+{
+  "deleted_pod": "flight-delay-api-84b95996d-fw5jv",
+  "deleted_uid": "f7d1e0b0-d4cf-444f-baca-7a4b0d011886",
+  "recovery_seconds": 4.476,
+  "new_uids": [
+    "6b496eb3-5e3f-42a1-8732-ed413867cac8",
+    "76985566-f093-4408-9777-6fcf43c3a410",
+    "fa56d2da-932c-4c40-9afe-e95e224b5dbf",
+    "0772b481-83f7-4286-ae18-906eed224a98"
+  ],
+  "ready": 4
+}

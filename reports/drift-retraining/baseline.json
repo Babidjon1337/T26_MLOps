@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-11-20T12:19:49.452018+00:00",
+  "drift": {
+    "status": "ok",
+    "reference_rows": 12,
+    "current_rows": 12,
+    "features": {
+      "DepHour": {
+        "method": "psi_reference_bins",
+        "score": 0.0,
+        "status": "ok"
+      },
+      "IsWeekend": {
+        "method": "psi_categories",
+        "score": 0.0,
+        "status": "ok"
+      }
+    }
+  },
+  "automatic_promotion": false,
+  "action": "no_retraining"
+}

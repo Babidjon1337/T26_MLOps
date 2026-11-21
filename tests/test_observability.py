@@ -4,7 +4,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from mlops_flight_delay.api import create_app
+from mlops_flight_delay.api import PREDICTION_PROBABILITY, create_app
 from mlops_flight_delay.train import train_model
 
 
@@ -26,9 +26,7 @@ def test_metrics_expose_bounded_route_status_and_model_identity(tmp_path: Path) 
         metrics = client.get("/metrics").text
 
     assert 'http_requests_total{method="POST",route="/predict",status="200"}' in metrics
-    bucket = (
-        'http_request_duration_seconds_bucket{le="0.5",method="POST",route="/predict"}'
-    )
+    bucket = 'http_request_duration_seconds_bucket{le="0.5",method="POST",route="/predict"}'
     assert bucket in metrics
     assert 'model_info{model_name="flight-delay-classifier",model_version="0.2.0"' in metrics
     assert "lr11-metrics-test" not in metrics
@@ -44,9 +42,7 @@ def test_structured_log_correlates_request_without_payload(tmp_path: Path, caplo
         )
     assert response.status_code == 200
     records = [
-        json.loads(record.message)
-        for record in caplog.records
-        if record.message.startswith("{")
+        json.loads(record.message) for record in caplog.records if record.message.startswith("{")
     ]
     event = next(record for record in records if record["request_id"] == "lr11-log-test")
     assert event["route"] == "/predict"
@@ -63,3 +59,15 @@ def test_validation_failure_has_bounded_route_label(tmp_path: Path) -> None:
     assert response.status_code == 422
     assert 'http_requests_total{method="POST",route="/predict",status="422"}' in metrics
 
+
+def test_probability_histogram_records_only_successful_predictions(tmp_path: Path) -> None:
+    histogram = PREDICTION_PROBABILITY.labels(model_version="0.2.0")
+    before = histogram._sum.get()
+    with _client(tmp_path) as client:
+        response = client.post("/predict", json={"dep_hour": 9, "is_weekend": 0})
+        probability = response.json()["delay_probability"]
+        assert abs(histogram._sum.get() - before - probability) < 1e-9
+        after_valid = histogram._sum.get()
+        assert client.post("/predict", json={"dep_hour": 99, "is_weekend": 0}).status_code == 422
+        assert histogram._sum.get() == after_valid
+        assert "prediction_probability_count" in client.get("/metrics").text

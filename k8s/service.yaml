@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: flight-delay-api
 spec:
+  type: NodePort
   selector:
     app: flight-delay-api
   ports:

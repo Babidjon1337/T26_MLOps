@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "status": "candidate",
+  "model_name": "team3-skif-drift-candidates",
+  "model_version": "1",
+  "model_uri": "models:/team3-skif-drift-candidates/1",
+  "mlflow_run_id": "450615d4c0f94d688bd53030734eb1cc",
+  "source_commit": "4683724c6c470f6f81ae47527144e69a5ab6ab94",
+  "data_sha256": "d2038bfd4ba28a304e1bed26578c9bfcb556942b51694b8342a75f4f2dbf617e",
+  "quality_gate": {
+    "passed": true,
+    "roc_auc": 0.41666666666666663,
+    "minimum_roc_auc": 0.0,
+    "data_sha256": "d2038bfd4ba28a304e1bed26578c9bfcb556942b51694b8342a75f4f2dbf617e"
+  },
+  "tags": {
+    "validation_status": "passed",
+    "source_commit": "4683724c6c470f6f81ae47527144e69a5ab6ab94",
+    "data_sha256": "d2038bfd4ba28a304e1bed26578c9bfcb556942b51694b8342a75f4f2dbf617e",
+    "quality_report": "reports/drift-retraining/registry-candidate.json",
+    "owner_team": "team-3",
+    "registered_by": "ESKoVV",
+    "release_status": "candidate",
+    "test_roc_auc": "0.41666666666666663",
+    "minimum_roc_auc": "0.0"
+  },
+  "drift_candidate_id": "db394474839df61c8f1fff166896249262cfc713e91d94b2c964bd045963445d"
+}

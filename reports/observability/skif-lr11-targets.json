@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "data": {
+    "activeTargets": [
+      {
+        "discoveredLabels": {
+          "__address__": "app:8080",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/metrics",
+          "__scheme__": "http",
+          "__scrape_interval__": "5s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "5s",
+          "job": "flight-delay-api"
+        },
+        "labels": {
+          "instance": "app:8080",
+          "job": "flight-delay-api"
+        },
+        "scrapePool": "flight-delay-api",
+        "scrapeUrl": "http://app:8080/metrics",
+        "globalUrl": "http://app:8080/metrics",
+        "lastError": "",
+        "lastScrape": "2026-11-20T12:31:06.685988664Z",
+        "lastScrapeDuration": 0.001853067,
+        "health": "up",
+        "scrapeInterval": "5s",
+        "scrapeTimeout": "5s"
+      }
+    ],
+    "droppedTargets": [],
+    "droppedTargetCounts": {
+      "flight-delay-api": 0
+    }
+  }
+}

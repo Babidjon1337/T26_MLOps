@@ -1,0 +1,9 @@
+{
+  "policy_version": "skif-lr12-candidate-only-v1",
+  "minimum_window_rows": 8,
+  "psi_warning": 0.1,
+  "psi_alert": 0.25,
+  "automatic_retraining": true,
+  "automatic_promotion": false,
+  "scope": "lab candidate training; serving champion remains unchanged"
+}
